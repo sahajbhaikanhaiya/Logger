@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-logger" version="0.0.1"
+        xmlns="http://apache.org/cordova/ns/plugins/1.0">
+
+    <name>Logger</name>
+
+    <js-module name="Logger" src="www/Logger.js">
+        <clobbers target="Logger" />
+    </js-module>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Logger">
+                <param name="ios-package" value="Logger" onLoad="true" />
+            </feature>
+        </config-file>
+
+        <!--Logger class-->
+        <header-file src="src/ios/Logger.h"/>
+        <source-file src="src/ios/Logger.m"/>
+
+    </platform>
+
+</plugin>
